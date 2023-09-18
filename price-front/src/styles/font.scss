@@ -1,0 +1,24 @@
+// Подключаем шрифт Roboto
+$font-family-roboto: 'Roboto', sans-serif;
+
+// Применяем шрифт к элементам
+body {
+  font-family: $font-family-roboto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-roboto;
+}
+
+// Пример применения разных начертаний и размеров шрифта
+.bold-text {
+  font-weight: 700;
+}
+
+.medium-text {
+  font-weight: 500;
+}
+
+.light-text {
+  font-weight: 300;
+}
