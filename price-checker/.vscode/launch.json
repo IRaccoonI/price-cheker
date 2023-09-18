@@ -1,8 +1,8 @@
 {
   "type": "node",
   "request": "launch",
-  "name": "Build Project",
-  "program": "${workspaceFolder}/src/index.ts",
+  "name": "Spider dev",
+  "program": "${workspaceFolder}/spiders/index.ts",
   "preLaunchTask": "npm: ci-build",
   "sourceMaps": true,
   "smartStep": true,

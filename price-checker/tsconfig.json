@@ -1,13 +1,24 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
     "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
     "sourceMap": true,
-    "lib": ["esnext", "dom"],
-    "strict": true,
-    "esModuleInterop": true,
-    "target": "es2017"
-  },
-  "include": ["src/**/*.ts"]
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@spiders/*": ["spiders/*"]
+    }
+  }
 }
