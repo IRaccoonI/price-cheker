@@ -1,15 +1,10 @@
 async function initMocks() {
-  if (typeof window === "undefined") {
-    // console.log("msw hosted");
-    // const { server } = await import("./server");
-    // server.listen();
-  } else {
-    console.log("msw running");
+  if (typeof window !== "undefined") {
     const { worker } = await import("./browser");
     worker.start();
   }
 }
 
-initMocks();
+if (process.env.NEXT_PUBLIC_MOCK === "true") initMocks();
 
 export {};

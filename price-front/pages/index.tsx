@@ -1,8 +1,9 @@
+import { fetchSearch } from "@/src/fetchers/search";
 import { useEffect } from "react";
 
 export default function About() {
   useEffect(() => {
-    fetch("/book");
+    fetchSearch();
   }, []);
 
   return <div>index</div>;
