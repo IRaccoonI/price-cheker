@@ -1,0 +1,22 @@
+{
+  "name": "price-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ci-build": "npx tsc",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "1.38.0",
+    "@types/node": "20.6.2",
+    "ts-node": "^10.9.1",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "playwright": "1.38.0"
+  }
+}
