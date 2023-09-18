@@ -6,6 +6,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import { MyThemeProvider } from "@/src/providers/theme";
+import { RecoilProvider } from "@/src/providers/recoilProvider";
 
 import "@/src/mocks";
 
@@ -16,11 +17,13 @@ import { Layout } from "@/src/components/common/layout";
 export default function MyApp({ Component, pageProps }) {
   return (
     <React.StrictMode>
-      <MyThemeProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </MyThemeProvider>
+      <RecoilProvider>
+        <MyThemeProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </MyThemeProvider>
+      </RecoilProvider>
     </React.StrictMode>
   );
 }
