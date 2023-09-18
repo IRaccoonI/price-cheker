@@ -1,6 +1,6 @@
 import { rest } from "msw";
 import { Book } from "./types";
-import { API, API_REST } from "@/src/fetchers/types";
+import { API, API_REST, MARKET } from "@/src/fetchers/types";
 
 type Fetchers = {
   [K in keyof API]: {
@@ -12,7 +12,11 @@ type Fetchers = {
 const fetchers: Fetchers = {
   [API_REST.GET_SEARCH]: {
     getMock: () => {
-      return [{ price: 123, title: "qwe" }];
+      return [
+        { price: 10023, title: "gfdqwe", market: MARKET.DNS },
+        { price: 12003, title: "fsweewq", market: MARKET.DNS },
+        { price: 12300, title: "qweasd", market: MARKET.DNS },
+      ];
     },
     method: "GET",
   },

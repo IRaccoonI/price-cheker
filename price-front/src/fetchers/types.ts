@@ -16,9 +16,14 @@ export type API = {
 
 type GetSearchResponse = GetSearchResponseItem[];
 
+export enum MARKET {
+  DNS = "dns",
+}
+
 interface GetSearchResponseItem {
   title: string;
   price: number;
+  market: MARKET;
 }
 
 type Validate<T> = Pick<
