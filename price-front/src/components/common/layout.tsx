@@ -10,8 +10,10 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
       <Box flexShrink={0}>
         <Header />
       </Box>
-      <Box flexGrow={1} sx={{ scroll: "auto" }}>
-        <Container>{children}</Container>
+      <Box flexGrow={1} my={2} position="relative" overflow="auto">
+        <Box position="absolute" left={0} top={0} width="100%" height="100%">
+          <Container>{children}</Container>
+        </Box>
       </Box>
       <Box flexShrink={0}>
         <Footer />

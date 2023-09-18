@@ -1,3 +1,6 @@
+const withPlugins = require("next-compose-plugins");
+const withImages = require("next-images");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   ...(process.env.NEXT_PUBLIC_MOCK !== "true"
@@ -6,12 +9,16 @@ const nextConfig = {
           return [
             {
               source: "/api/:path*",
-              destination: "http://localhost:8000/:path*", // Proxy to Backend
+              destination: `${process.env.BACKEND_URL}/api/:path*`, // Proxy to Backend
             },
           ];
         },
       }
     : {}),
+
+  images: {
+    domains: ["c.dns-shop.ru"],
+  },
 };
 
-module.exports = nextConfig;
+module.exports = withPlugins([[withImages]], nextConfig);

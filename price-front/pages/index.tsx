@@ -1,10 +1,9 @@
-import { fetchSearch } from "@/src/fetchers/search";
-import { useEffect } from "react";
+import { MarketGrid } from "@/src/components/marketGrid";
 
-export default function About() {
-  useEffect(() => {
-    fetchSearch();
-  }, []);
-
-  return <div>index</div>;
+export default function Index() {
+  return (
+    <div>
+      <MarketGrid />
+    </div>
+  );
 }

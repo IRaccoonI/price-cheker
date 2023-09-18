@@ -1,5 +1,5 @@
 export enum API_REST {
-  GET_SEARCH = "/api/search",
+  GET_SEARCH = "/api/v1/search",
 }
 
 export type ApiMethod = "POST" | "GET";
@@ -14,16 +14,20 @@ export type API = {
   };
 };
 
-type GetSearchResponse = GetSearchResponseItem[];
+export type GetSearchResponse = GetSearchResponseItem[];
 
 export enum MARKET {
   DNS = "dns",
 }
 
-interface GetSearchResponseItem {
+export interface GetSearchResponseItem {
+  id: string;
   title: string;
   price: number;
   market: MARKET;
+  imgSrc: string;
+  averageRating: number;
+  totalRating: number;
 }
 
 type Validate<T> = Pick<
