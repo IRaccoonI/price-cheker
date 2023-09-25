@@ -18,7 +18,7 @@ export const Rating: FC<{
       </Typography>
       <OriginalRating
         value={averageRating}
-        precision={0.05}
+        precision={0.1}
         size="small"
         readOnly
       />

@@ -1,9 +1,10 @@
-import { MarketGrid } from "@/src/components/marketGrid";
+import SearchProduct from "@/src/components/SearchProduct";
 
 export default function Index() {
   return (
     <div>
-      <MarketGrid />
+      <SearchProduct />
+      {/* <MarketGrid /> */}
     </div>
   );
 }

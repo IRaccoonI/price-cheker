@@ -24,7 +24,7 @@ export interface GetSearchResponseItem {
   id: string;
   title: string;
   price: number;
-  market: MARKET;
+  market: string;
   imgSrc: string;
   averageRating: number;
   totalRating: number;

@@ -1,8 +1,8 @@
-import Footer from "@/src/components/common/footer";
-import Header from "@/src/components/common/header";
 import { Box } from "@mui/material";
 import { FC, ReactNode } from "react";
 import { Container } from "@mui/material";
+import Header from "@/src/components/common/Header";
+import Footer from "@/src/components/common/Footer";
 
 export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (

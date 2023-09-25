@@ -1,17 +1,22 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import { BottomNavigation } from "@mui/material";
+import { BottomNavigation, Box, useTheme } from "@mui/material";
 
 const Footer = () => {
+  const theme = useTheme();
+
   return (
-    <BottomNavigation
-      sx={{ height: 32, display: "flex", alignItems: "center" }}
+    <Box
+      width="100%"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      sx={{ height: 32, backgroundColor: theme.palette.background.default }}
     >
       <Typography variant="body2" align="center" color="white">
-        © {new Date().getFullYear()} My App. All rights reserved.
+        ©My App. All rights reserved.
       </Typography>
-    </BottomNavigation>
+    </Box>
   );
 };
 

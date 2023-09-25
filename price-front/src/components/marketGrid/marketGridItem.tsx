@@ -1,4 +1,4 @@
-import { Rating } from "@/src/components/rating";
+import { Rating } from "@/src/components/Rating";
 import { GetSearchResponseItem } from "@/src/fetchers/types";
 import { Box, Card, CardHeader, Grid, Typography } from "@mui/material";
 import Image from "next/image";
