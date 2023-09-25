@@ -33,7 +33,7 @@ function getPrice(str: string): number {
   return 0;
 }
 
-export const dnsSearch = async () => {
+export const dnsSearch = async (search: string) => {
   const browser: Browser = await firefox.launch({
     headless: true, // Отключение headless-режима (по умолчанию true)
     args: ['--disable-notifications'], // Пример дополнительных аргументов командной строки Firefox
@@ -42,9 +42,8 @@ export const dnsSearch = async () => {
   });
   const page: Page = await browser.newPage();
 
-  await page.goto(
-    'https://www.dns-shop.ru/search/?q=iphone+14&category=17a8a01d16404e77',
-  );
+  console.log(`https://www.dns-shop.ru/search/?q=${encodeURI(search)}`);
+  await page.goto(`https://www.dns-shop.ru/search/?q=${encodeURI(search)}`);
   await page.waitForSelector('#js-chatik-container');
 
   const productLocators = page.locator('.catalog-product');

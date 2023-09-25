@@ -1,16 +1,19 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import configuration from '../config/configuration';
 import { ConfigModule } from '@nestjs/config';
+import { LoggerMiddleware } from 'src/logger/logger.middleware';
+import { SearchModule } from 'src/search/search.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       load: [configuration],
     }),
+    SearchModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes('*');
+  }
+}
